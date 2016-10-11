@@ -18,7 +18,7 @@ class Leads extends Api
     /**
      * {@inheritdoc}
      */
-    protected $endpoint = 'leads';
+    protected $endpoint = 'contacts';
 
     /**
      * Get a list of users available as lead owners
@@ -27,7 +27,7 @@ class Leads extends Api
      */
     public function getOwners()
     {
-        return $this->makeRequest('leads/list/owners');
+        return $this->makeRequest('contacts/list/owners');
     }
 
     /**
@@ -37,7 +37,7 @@ class Leads extends Api
      */
     public function getFieldList()
     {
-        return $this->makeRequest('leads/list/fields');
+        return $this->makeRequest('contacts/list/fields');
     }
 
     /**
@@ -47,7 +47,7 @@ class Leads extends Api
      */
     public function getLists()
     {
-        return $this->makeRequest('leads/list/lists');
+        return $this->makeRequest('contacts/list/lists');
     }
 
     /**
@@ -75,7 +75,7 @@ class Leads extends Api
             }
         }
 
-        return $this->makeRequest('leads/'.$id.'/notes', $parameters);
+        return $this->makeRequest('contacts/'.$id.'/notes', $parameters);
     }
 
     /**
@@ -85,7 +85,7 @@ class Leads extends Api
      */
     public function getLeadLists($id)
     {
-        return $this->makeRequest('leads/'.$id.'/lists');
+        return $this->makeRequest('contacts/'.$id.'/lists');
     }
 
     /**
@@ -95,6 +95,6 @@ class Leads extends Api
      */
     public function getLeadCampaigns($id)
     {
-        return $this->makeRequest('leads/'.$id.'/campaigns');
+        return $this->makeRequest('contacts/'.$id.'/campaigns');
     }
 }
